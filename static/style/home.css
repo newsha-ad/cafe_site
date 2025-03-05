@@ -30,8 +30,11 @@ header nav {
 }
 
 header h2 {
+    display: flex;
+    align-items: center;
     font-size: 24px;
     font-weight: bold;
+    gap: 10px;
 }
 
 header h2 a {
@@ -47,6 +50,12 @@ header ul {
     list-style: none;
     display: flex;
     gap: 20px;
+}
+
+header h2 img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
 }
 
 header ul li {
