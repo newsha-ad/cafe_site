@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Welcome to Our Coffee{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Our Coffee</h1>
+        <p>A unique experience of taste and quality</p>
+    </section>
+    
+    <!-- About Us -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>
+            Welcome to <b>Our Coffee</b>, a cozy place where every cup tells a story. 
+            We are passionate about crafting the perfect coffee experience, using 
+            high-quality beans sourced from the best farms around the world.
+        </p>
+        <p>
+            Whether you're looking for a quiet spot to work, a place to catch up with friends, 
+            or just a moment to enjoy the rich aroma of freshly brewed coffee, our café is the 
+            perfect destination.
+        </p>
+        <p>
+            From hand-crafted espresso drinks to delicious pastries and signature blends, 
+            we bring you the warmth and comfort of a true coffeehouse experience.  
+            Stop by, take a sip, and make yourself at home!
+        </p>
+        <div class="img-coffee">
+            <div class="img">
+                <img src="{% static 'image/001.jpg' %}" alt="Our Coffee">
+            </div>
+            <div class="img">
+                <img src="{% static 'image/002.jpg' %}" alt="Our Coffee">
+            </div>
+            <div class="img">
+                <img src="{% static 'image/003.jpg' %}" alt="Our Coffee">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Information -->
+    <footer id="contact">
+        <h2>Contact Us</h2>
+        <p class="address"><b>Our Coffee, 42nd Living St, 43043 New York, NY</b></p>
+        <p>You can also contact us by phone or email and you can send us your messages and comments here:</p>
+        
+        <div class="contact-container">
+            <div class="info-contact">
+                <div class="info"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;New York, US</div>
+                <div class="info"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;Phone: 00553123-2323</div>
+                <div class="info"><i class="fas fa-envelope"></i>&nbsp;&nbsp;Email: ourCoffee@coffee.com</div>
+            </div>
+            <div class="info-type">
+                <form id="contactForm">
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <textarea id="message" name="message" placeholder="Message" required></textarea>
+                    <input type="submit" value="SEND">
+                </form>
+            </div>
+        </div>
+    </footer>
+{% endblock %}
+

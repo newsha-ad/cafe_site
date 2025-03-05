@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'style/dashboard.css' %}">
+{% endblock %}
+
+
+{% block title %}Dashboard{% endblock %}
+
+
+{% block content %}
+  <div class="dashboard-container">
+    <h2>Welcome, {{ user.username }}</h2>
+    
+    <div class="orders-section">
+      <h3>Your Orders</h3>
+      <ul>
+        {% for order in orders %}
+          <li>
+            <strong>Order #{{ order.order_number }}</strong><br>
+            Item: {{ order.item_name }}<br>
+            Date: {{ order.date }}<br>
+            Quantity: {{ order.quantity }}<br>
+            Total Price: ${{ order.price }}
+          </li>
+        {% empty %}
+          <li>No orders placed yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="reservations-section">
+      <h3>Your Reservations</h3>
+      <ul>
+        {% for reservation in reservations %}
+          <li>
+            <strong>Reservation for {{ reservation.fullname }}</strong><br>
+            Date: {{ reservation.reservation_date }}<br>
+            Time: {{ reservation.reservation_time }}<br>
+            Number of People: {{ reservation.number_of_people }}<br>
+          </li>
+        {% empty %}
+          <li>No reservations yet.</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{% endblock %}
